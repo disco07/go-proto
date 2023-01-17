@@ -4,13 +4,9 @@ package calculator;
 
 option go_package="github.com/disco07/calculator";
 
-message Calculator {
+message CalculatorRequest {
   float number_one = 1;
   float number_two = 2;
-}
-
-message CalculatorRequest {
-  Calculator calculator = 1;
 }
 
 message CalculatorResponse {

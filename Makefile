@@ -4,7 +4,7 @@ proto_c:
 	 proto/calculator.proto
 
 calculator_server:
-	cd ./server && go run server.go
+	cd ./server && go run .
 
 calculator_client:
-	cd ./server && go run client.go
+	cd ./client && go run .

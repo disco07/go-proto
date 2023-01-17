@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	pb "github.com/disco07/calculator/pb"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"log"
@@ -15,4 +16,7 @@ func main() {
 		log.Fatalf("failed to connect: %v", err)
 	}
 	defer conn.Close()
+	c := pb.NewCalculatorServiceClient(conn)
+
+	doCalculatorAdd(c)
 }

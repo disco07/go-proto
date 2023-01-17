@@ -21,9 +21,10 @@ func main() {
 	}
 	log.Printf("listening on %s", grpcPort)
 
-	srv := grpc.NewServer()
+	s := grpc.NewServer()
+	pb.RegisterCalculatorServiceServer(s, &Server{})
 
-	if err = srv.Serve(lis); err != nil {
+	if err = s.Serve(lis); err != nil {
 		log.Fatalf("error serving %s: %v", grpcPort, err)
 	}
 }
