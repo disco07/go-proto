@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package="github.com/disco07/calculator";
+
+message Calculator {
+  float number_one = 1;
+  float number_two = 2;
+}
+
+message CalculatorRequest {
+  Calculator calculator = 1;
+}
+
+message CalculatorResponse {
+  float result = 1;
+}
+
+service CalculatorService {
+  rpc Add(CalculatorRequest) returns (CalculatorResponse) {};
+  rpc Sub(CalculatorRequest) returns (CalculatorResponse) {};
+  rpc Div(CalculatorRequest) returns (CalculatorResponse) {};
+  rpc Mult(CalculatorRequest) returns (CalculatorResponse) {};
+}
